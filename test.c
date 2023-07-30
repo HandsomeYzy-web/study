@@ -6,5 +6,7 @@
 
 int main() {
     ArrayListTest();
+    ArrayList myList = CreateArrayList();
+
     return 0;
 }
