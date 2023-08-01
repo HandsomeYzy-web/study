@@ -2,11 +2,10 @@
 // Created by yzy on 2023/7/19.
 //
 
-#include "ArrayList.h"
+#include "LinkList.h"
 
 int main() {
-    ArrayListTest();
-    ArrayList myList = CreateArrayList();
-
+    LinkListTest();
+//    ArrayListTest();
     return 0;
 }

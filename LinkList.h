@@ -14,17 +14,43 @@ typedef struct Node {
     struct Node *next;
 } Node, *LinkList;
 
-// 初始化带头结点的单链表
+// 创建链表函数
 LinkList CreateLinkList();
-//
-void DestroyLinkList(LinkList head);
-// 向链表表尾添加元素
-bool LinkListAppend(LinkList L, int data);
-// 按下表添加元素
+
+// 通过数组创建链表函数
+LinkList CreateLinkListByArray(const int *arr, int length);
+
+// 销毁链表函数
+void DestroyLinkList(Node *node);
+
+// 在链表头部插入一个元素函数
+bool LinkListInsertAtHead(LinkList L, int data);
+
+// 在链表尾部插入一个元素
+bool LinkListInsertAtTail(LinkList L, int data);
+
+// 在链表尾部插入一组元素函数
+bool LinkListInsertArrayAtTail(LinkList L,const int *arr, int length);
+
+// 在指定位置插入一个元素到链表中
 bool LinkListInsert(LinkList L, int index, int data);
+
+// 按下标删除链表中的元素
 bool LinkListDelete(LinkList L, int index);
+
+// 查找元素在链表中的索引
 int FindElementInLinkList(LinkList L, int target);
-int GetElementByIndexInLinkList (LinkList L, int index);
-void printLinkList(LinkList L);
+
+// 通过下标获取链表中的元素值
+bool GetElementByIndexInLinkList(LinkList L, int index, int *element);
+
+// 获取链表的长度函数
+int GetLinkListLength(LinkList L);
+
+// 打印链表的元素函数
+void PrintLinkList(LinkList L);
+
+// 链表测试函数
+void LinkListTest();
 
 #endif //STUDY_LINKLIST_H

@@ -79,6 +79,7 @@ bool IncreaseSize(ArrayList L, int newLength) {
     return true;
 }
 
+// 追加元素到线性表末尾
 bool ArrayListAppend(ArrayList L,int element) {
     // 判断是否需要扩容
     if (L->length == L->MaxSize) {
