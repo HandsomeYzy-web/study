@@ -3,4 +3,8 @@ project(study C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(study sort.c sort.h test.c ArrayList.c ArrayList.h LinkList.c LinkList.h)
+add_executable(study sort.c sort.h test.c ArrayList.c ArrayList.h LinkList.c LinkList.h
+        Stack.c
+        Stack.h
+        Stack.c
+        Stack.h)

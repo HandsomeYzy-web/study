@@ -2,10 +2,13 @@
 // Created by yzy on 2023/7/19.
 //
 
-#include "LinkList.h"
+//#include "ArrayList.h"
+//#include "LinkList.h"
+#include "Stack.h"
 
 int main() {
-    LinkListTest();
 //    ArrayListTest();
+//    LinkListTest();
+    SqStackTest();
     return 0;
 }

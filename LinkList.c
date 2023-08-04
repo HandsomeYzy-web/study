@@ -1,6 +1,6 @@
 #include "LinkList.h"
 
-// 创建链表函数
+// 创建单链表函数
 LinkList CreateLinkList() {
     LinkList head = (LinkList) malloc(sizeof (Node));
     if (head == NULL) {
@@ -12,7 +12,7 @@ LinkList CreateLinkList() {
     return head;
 }
 
-// 通过数组创建链表函数
+// 通过数组创建单链表函数
 LinkList CreateLinkListByArray(const int *arr, int length) {
     LinkList head = CreateLinkList();
     if (head == NULL) {
@@ -43,7 +43,7 @@ LinkList CreateLinkListByArray(const int *arr, int length) {
     return head;
 }
 
-// 销毁链表函数
+// 销毁单链表函数
 void DestroyLinkList(Node *node) {
     Node* currentNode = node;
     while (currentNode != NULL) {
@@ -56,7 +56,7 @@ void DestroyLinkList(Node *node) {
     node = NULL;
 }
 
-// 在链表头部插入一个元素函数
+// 在单链表头部插入一个元素函数
 bool LinkListInsertAtHead(LinkList L, int data) {
     if (L == NULL) {
         printf("Invalid link list!\n");
@@ -76,7 +76,7 @@ bool LinkListInsertAtHead(LinkList L, int data) {
     return true;
 }
 
-// 在链表尾部插入一个元素
+// 在单链表尾部插入一个元素
 bool LinkListInsertAtTail(LinkList L, int data) {
     if (L == NULL) {
         printf("Invalid link list!\n");
@@ -102,7 +102,7 @@ bool LinkListInsertAtTail(LinkList L, int data) {
     return true;
 }
 
-// 在链表尾部插入一组元素函数
+// 在单链表尾部插入一组元素函数
 bool LinkListInsertArrayAtTail(LinkList L,const int *arr, int length) {
     if (L == NULL) {
         printf("Invalid link list!\n");
@@ -116,6 +116,7 @@ bool LinkListInsertArrayAtTail(LinkList L,const int *arr, int length) {
 
     // 找到末尾节点，记录节点，便于在出现异常时释放已开辟的空间，使链表恢复原样
     Node *tail = currentNode;
+
 
     for (int i = 0; i < length; i++) {
         Node *newNode = (Node *)malloc(sizeof(Node));
@@ -134,7 +135,7 @@ bool LinkListInsertArrayAtTail(LinkList L,const int *arr, int length) {
     return true;
 }
 
-// 在指定位置插入一个元素到链表中
+// 在指定位置插入一个元素到单链表中
 bool LinkListInsert(LinkList L, int index, int data) {
     if (L == NULL) {
         printf("Invalid link list!\n");
@@ -168,7 +169,7 @@ bool LinkListInsert(LinkList L, int index, int data) {
     return true;
 }
 
-// 按下标删除链表中的元素
+// 按下标删除单链表中的元素
 bool LinkListDelete(LinkList L, int index) {
     if (L == NULL) {
         printf("Invalid link list!\n");
@@ -196,7 +197,7 @@ bool LinkListDelete(LinkList L, int index) {
     return true;
 }
 
-// 查找元素在链表中的索引
+// 查找元素在单链表中的索引
 int FindElementInLinkList(LinkList L, int target) {
     if (L == NULL) {
         printf("Invalid link list!\n");
@@ -216,7 +217,7 @@ int FindElementInLinkList(LinkList L, int target) {
 }
 
 
-// 通过下标获取链表中的元素值
+// 通过下标获取单链表中的元素值
 bool GetElementByIndexInLinkList(LinkList L, int index, int *element) {
     if (L == NULL) {
         printf("Invalid link list!\n");
@@ -240,7 +241,7 @@ bool GetElementByIndexInLinkList(LinkList L, int index, int *element) {
     return true;
 }
 
-// 获取链表的长度函数
+// 获取单链表的长度函数
 int GetLinkListLength(LinkList L) {
     if (L == NULL) {
         printf("Invalid link list!\n");
@@ -256,7 +257,7 @@ int GetLinkListLength(LinkList L) {
     return length;
 }
 
-// 打印链表的元素函数
+// 打印单链表的元素函数
 void PrintLinkList(LinkList L) {
     if (L == NULL) {
         printf("Empty link list!\n");
@@ -276,7 +277,7 @@ void PrintLinkList(LinkList L) {
     printf("\n");
 }
 
-// 链表测试函数
+// 单链表测试函数
 void LinkListTest() {
     // 创建链表并在头部插入元素
     LinkList list1 = CreateLinkList();
@@ -350,4 +351,96 @@ void LinkListTest() {
     // 销毁链表
     DestroyLinkList(list1);
     DestroyLinkList(list2);
+}
+
+// 创建双链表函数
+DLinkList CreateDLinkList() {
+    DLinkList head = (DNode *) malloc(sizeof (DNode));
+    if (head == NULL) {
+        printf("Memory allocation failed when creating link list!\n");
+        exit(-1);
+    }
+
+    head->prior = NULL;
+    head->next = NULL;
+    return head;
+}
+
+bool DLinkListInsertAtHead(DLinkList L, int data) {
+    if (L == NULL) {
+        printf("Invalid link list!\n");
+        return false;
+    }
+
+    DNode *newDNode = (DNode *)malloc(sizeof(DNode));
+    if (newDNode == NULL) {
+        printf("Memory allocation failed when inserting at head!\n");
+        return false;
+    }
+
+    newDNode->prior = L;
+    newDNode->data = data;
+    newDNode->next = L->next;
+    L->next = newDNode;
+
+    return true;
+}
+
+bool DLinkListInsertAtTail(DLinkList L, int data) {
+    if (L == NULL) {
+        printf("Invalid link list!\n");
+        return false;
+    }
+
+    DNode *newDNode = (DNode *)malloc(sizeof(DNode));
+    if (newDNode == NULL) {
+        printf("Memory allocation failed when inserting at tail!\n");
+        return false;
+    }
+
+    newDNode->data = data;
+    newDNode->next = NULL;
+
+    DNode *currentDNode = L;
+    while (currentDNode->next != NULL) {
+        currentDNode = currentDNode->next;
+    }
+
+    currentDNode->next = newDNode;
+    newDNode->prior = currentDNode;
+
+    return true;
+}
+
+bool DLinkListInsert(DLinkList L, int index, int data) {
+    if (L == NULL) {
+        printf("Invalid link list!\n");
+        return false;
+    }
+
+    // 寻找要插入的位置
+    DNode *currentNode = L;
+    int currentPosition = 0;
+    while (currentNode->next != NULL && currentPosition < index) {
+        currentNode = currentNode->next;
+        currentPosition++;
+    }
+
+    // 判断输入下标是否合法
+    if (currentNode == NULL) {
+        printf("Invalid index when inserting element!\n");
+        return false;
+    }
+
+    // 插入元素
+    DNode *newDNode = (DNode *) malloc(sizeof(DNode));
+    if (newDNode == NULL) {
+        printf("Memory allocation failed when inserting element!\n");
+        return false;
+    }
+
+    newDNode->data = data;
+    newDNode->next = currentNode->next;
+    currentNode->next = newDNode;
+    return true;
 }
