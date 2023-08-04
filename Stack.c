@@ -109,7 +109,7 @@ void SqStackTest() {
 }
 
 // 初始化链栈
-LinkedStack* createLinkedStack() {
+LinkedStack* CreateLinkedStack() {
     LinkedStack* stack = (LinkedStack*)malloc(sizeof(LinkedStack));
     if (stack == NULL) {
         printf("Memory allocation failed when creating the linked stack!\n");
@@ -121,7 +121,7 @@ LinkedStack* createLinkedStack() {
 }
 
 // 销毁链栈，释放内存
-void destroyLinkedStack(LinkedStack* stack) {
+void DestroyLinkedStack(LinkedStack* stack) {
     if (stack == NULL) {
         return;
     }
@@ -137,12 +137,12 @@ void destroyLinkedStack(LinkedStack* stack) {
 }
 
 // 判断链栈是否为空
-bool isLinkedStackEmpty(LinkedStack* stack) {
+bool IsLinkedStackEmpty(LinkedStack* stack) {
     return stack->top == NULL;
 }
 
 // 入栈
-bool pushLinkedStack(LinkedStack* stack, int data) {
+bool PushLinkedStack(LinkedStack* stack, int data) {
     StackNode* newStackNode = (StackNode*)malloc(sizeof(StackNode));
     if (newStackNode == NULL) {
         printf("Memory allocation failed when pushing to the linked stack!\n");
@@ -156,8 +156,8 @@ bool pushLinkedStack(LinkedStack* stack, int data) {
 }
 
 // 出栈
-int popLinkedStack(LinkedStack* stack) {
-    if (isLinkedStackEmpty(stack)) {
+int PopLinkedStack(LinkedStack* stack) {
+    if (IsLinkedStackEmpty(stack)) {
         printf("Linked stack is empty! Cannot PopSqStack element.\n");
         return -1; // 返回一个特定值表示栈为空
     }
@@ -170,11 +170,42 @@ int popLinkedStack(LinkedStack* stack) {
 }
 
 // 查看栈顶元素但不出栈
-int peekLinkedStack(LinkedStack* stack) {
-    if (isLinkedStackEmpty(stack)) {
+int PeekLinkedStack(LinkedStack* stack) {
+    if (IsLinkedStackEmpty(stack)) {
         printf("Linked stack is empty! Cannot PeekSqStack element.\n");
         return -1; // 返回一个特定值表示栈为空
     }
 
     return stack->top->data;
+}
+
+// 链栈测试函数
+void LinkedStackTest() {
+    LinkedStack* stack = CreateLinkedStack();
+
+    // 测试入栈操作
+    printf("Pushing elements to the stack...\n");
+    for (int i = 1; i <= 5; i++) {
+        if (PushLinkedStack(stack, i * 10)) {
+            printf("Pushed: %d\n", i * 10);
+        }
+    }
+
+    // 测试查看栈顶元素
+    printf("Top element of the stack: %d\n", PeekLinkedStack(stack));
+
+    // 测试出栈操作
+    printf("Popping elements from the stack...\n");
+    while (!IsLinkedStackEmpty(stack)) {
+        int item = PopLinkedStack(stack);
+        printf("Popped: %d\n", item);
+    }
+
+    // 测试栈空的情况
+    if (PopLinkedStack(stack) == -1) {
+        printf("Stack is empty! Cannot pop element.\n");
+    }
+
+    // 销毁栈，释放内存
+    DestroyLinkedStack(stack);
 }

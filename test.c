@@ -9,6 +9,7 @@
 int main() {
 //    ArrayListTest();
 //    LinkListTest();
-    SqStackTest();
+//    SqStackTest();
+    LinkedStackTest();
     return 0;
 }

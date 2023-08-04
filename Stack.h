@@ -52,21 +52,24 @@ int PeekSqStack(SqStack* stack);
 void SqStackTest();
 
 // 初始化链栈
-LinkedStack* createLinkedStack();
+LinkedStack* CreateLinkedStack();
 
 // 销毁链栈，释放内存
-void destroyLinkedStack(LinkedStack* stack);
+void DestroyLinkedStack(LinkedStack* stack);
 
 // 判断链栈是否为空
-bool isLinkedStackEmpty(LinkedStack* stack);
+bool IsLinkedStackEmpty(LinkedStack* stack);
 
 // 入栈
-bool pushLinkedStack(LinkedStack* stack, int data);
+bool PushLinkedStack(LinkedStack* stack, int data);
 
 // 出栈
-int popLinkedStack(LinkedStack* stack);
+int PopLinkedStack(LinkedStack* stack);
 
 // 查看栈顶元素但不出栈
-int peekLinkedStack(LinkedStack* stack);
+int PeekLinkedStack(LinkedStack* stack);
+
+// 链栈测试函数
+void LinkedStackTest();
 
 #endif //STUDY_STACK_H
