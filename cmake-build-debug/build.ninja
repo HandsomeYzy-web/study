@@ -79,6 +79,12 @@ build CMakeFiles/study.dir/Stack.c.obj: C_COMPILER__study_unscanned_Debug D$:/Cl
   OBJECT_DIR = CMakeFiles\study.dir
   OBJECT_FILE_DIR = CMakeFiles\study.dir
 
+build CMakeFiles/study.dir/Queue.c.obj: C_COMPILER__study_unscanned_Debug D$:/ClionProject/study/Queue.c || cmake_object_order_depends_target_study
+  DEP_FILE = CMakeFiles\study.dir\Queue.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\study.dir
+  OBJECT_FILE_DIR = CMakeFiles\study.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target study
@@ -87,7 +93,7 @@ build CMakeFiles/study.dir/Stack.c.obj: C_COMPILER__study_unscanned_Debug D$:/Cl
 #############################################
 # Link the executable study.exe
 
-build study.exe: C_EXECUTABLE_LINKER__study_Debug CMakeFiles/study.dir/sort.c.obj CMakeFiles/study.dir/test.c.obj CMakeFiles/study.dir/ArrayList.c.obj CMakeFiles/study.dir/LinkList.c.obj CMakeFiles/study.dir/Stack.c.obj
+build study.exe: C_EXECUTABLE_LINKER__study_Debug CMakeFiles/study.dir/sort.c.obj CMakeFiles/study.dir/test.c.obj CMakeFiles/study.dir/ArrayList.c.obj CMakeFiles/study.dir/LinkList.c.obj CMakeFiles/study.dir/Stack.c.obj CMakeFiles/study.dir/Queue.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\study.dir

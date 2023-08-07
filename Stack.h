@@ -46,7 +46,7 @@ bool PushSqStack(SqStack* stack, int item);
 int PopSqStack(SqStack* stack);
 
 // 查看栈顶元素但不出栈
-int PeekSqStack(SqStack* stack);
+bool PeekSqStack(SqStack* stack, int* element);
 
 // 顺序栈测试函数
 void SqStackTest();
@@ -67,7 +67,7 @@ bool PushLinkedStack(LinkedStack* stack, int data);
 int PopLinkedStack(LinkedStack* stack);
 
 // 查看栈顶元素但不出栈
-int PeekLinkedStack(LinkedStack* stack);
+int PeekLinkedStack(LinkedStack* stack, int* element);
 
 // 链栈测试函数
 void LinkedStackTest();

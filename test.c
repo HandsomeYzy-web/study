@@ -4,12 +4,15 @@
 
 //#include "ArrayList.h"
 //#include "LinkList.h"
-#include "Stack.h"
+//#include "Stack.h"
+#include "Queue.h"
 
 int main() {
 //    ArrayListTest();
 //    LinkListTest();
 //    SqStackTest();
-    LinkedStackTest();
+//    LinkedStackTest();
+    ArrayQueueTest();
+    LinkedQueueTest();
     return 0;
 }

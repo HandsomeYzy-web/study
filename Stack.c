@@ -63,13 +63,14 @@ int PopSqStack(SqStack* stack) {
     return item;
 }
 
-int PeekSqStack(SqStack* stack) {
+bool PeekSqStack(SqStack* stack, int* element) {
     if (IsSqStackEmpty(stack)) {
         printf("Stack is empty! Cannot PeekSqStack element.\n");
-        return -1; // 返回一个特定值表示栈为空
+        return false; // 返回一个特定值表示栈为空
     }
 
-    return stack->array[stack->top];
+    *element = stack->array[stack->top];
+    return true;
 }
 
 void SqStackTest() {
@@ -90,7 +91,9 @@ void SqStackTest() {
     }
 
     // 测试查看栈顶元素
-    printf("Top element of the stack: %d\n", PeekSqStack(stack));
+    int element = 0;
+    PeekSqStack(stack,&element);
+    printf("Top element of the stack: %d\n", element);
 
     // 测试出栈操作
     printf("Popping elements from the stack...\n");
@@ -170,13 +173,14 @@ int PopLinkedStack(LinkedStack* stack) {
 }
 
 // 查看栈顶元素但不出栈
-int PeekLinkedStack(LinkedStack* stack) {
+int PeekLinkedStack(LinkedStack* stack, int* element) {
     if (IsLinkedStackEmpty(stack)) {
         printf("Linked stack is empty! Cannot PeekSqStack element.\n");
-        return -1; // 返回一个特定值表示栈为空
+        return false; // 返回一个特定值表示栈为空
     }
 
-    return stack->top->data;
+    *element = stack->top->data;
+    return true;
 }
 
 // 链栈测试函数
@@ -192,7 +196,9 @@ void LinkedStackTest() {
     }
 
     // 测试查看栈顶元素
-    printf("Top element of the stack: %d\n", PeekLinkedStack(stack));
+    int element = 0;
+    PeekLinkedStack(stack,&element);
+    printf("Top element of the stack: %d\n", element);
 
     // 测试出栈操作
     printf("Popping elements from the stack...\n");

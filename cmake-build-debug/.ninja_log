@@ -1,10 +1,22 @@
 # ninja log v5
-1831	3663	7126595444053719	study.exe	3d93ebc90e61f5d6
-0	161	7128336459592155	build.ninja	e1b9e375cd9efcbc
-7	1831	7126595425834261	CMakeFiles/study.dir/test.c.obj	4ac7b3ac0c899a3b
+407	767	7128384658370222	study.exe	3d93ebc90e61f5d6
+0	161	7128421475412555	build.ninja	e1b9e375cd9efcbc
+7	343	7128384654251829	CMakeFiles/study.dir/test.c.obj	4ac7b3ac0c899a3b
 4	558	7122453571157614	CMakeFiles/study.dir/sort.c.obj	b9990c0b7ef0118e
 90	445	7123058633992825	CMakeFiles/study.dir/List.c.obj	7fb2a0b3414e216a
 69	1817	7126595425685042	CMakeFiles/study.dir/LinkList.c.obj	cb0a5521ba5a058d
 11	411	7123106943491474	CMakeFiles/study.dir/LinerList.c.obj	91e203bfdea51f28
 42	9161	7125585606928831	CMakeFiles/study.dir/ArrayList.c.obj	5330caabb8175698
-117	1811	7126595425610613	CMakeFiles/study.dir/Stack.c.obj	f8ad0213e27e0231
+45	407	7128384654858393	CMakeFiles/study.dir/Stack.c.obj	f8ad0213e27e0231
+1	2912	7128566166428928	CMakeFiles/study.dir/test.c.obj	4ac7b3ac0c899a3b
+18	2912	7128566166428928	CMakeFiles/study.dir/Queue.c.obj	1f3af692da677d40
+2914	4927	7128566186541633	study.exe	ac1e43e6a7b0d359
+4	307	7128631710535040	CMakeFiles/study.dir/Queue.c.obj	1f3af692da677d40
+308	690	7128631714318545	study.exe	ac1e43e6a7b0d359
+4	265	7128632024624020	CMakeFiles/study.dir/Queue.c.obj	1f3af692da677d40
+266	656	7128632028461077	study.exe	ac1e43e6a7b0d359
+2	194	7130045492562569	CMakeFiles/study.dir/test.c.obj	4ac7b3ac0c899a3b
+20	203	7130045492652548	CMakeFiles/study.dir/Queue.c.obj	1f3af692da677d40
+203	362	7130045494198168	study.exe	ac1e43e6a7b0d359
+2	118	7130045773699567	CMakeFiles/study.dir/test.c.obj	4ac7b3ac0c899a3b
+119	265	7130045775105843	study.exe	ac1e43e6a7b0d359
