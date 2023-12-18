@@ -10,3 +10,5 @@
 #include <stdio.h>
 
 void bubble_sort(int arr[], int length);
+
+void quick_sort(int arr[], int left, int right);

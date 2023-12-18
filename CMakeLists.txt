@@ -9,4 +9,8 @@ add_executable(study sort.c sort.h test.c ArrayList.c ArrayList.h LinkList.c Lin
         Stack.c
         Stack.h
         Queue.c
-        Queue.h)
+        Queue.h
+        String.c
+        String.h
+        String.h
+)
